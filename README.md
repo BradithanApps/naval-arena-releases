@@ -8,7 +8,7 @@ Roguelite de arena por oleadas con barcos en 3D (estilo **Brotato**): capitaneas
 
 ## Descargar e instalar (Windows)
 
-1. Descarga el zip de la versión actual desde la carpeta [`windows/`](windows/) (botón **Download raw file**).
+1. Descarga el zip de la última versión desde [**Releases**](https://github.com/BradithanApps/naval-arena-releases/releases/latest) (`NavalArena-<versión>-windows.zip`). Las versiones anteriores siguen disponibles en la [lista de Releases](https://github.com/BradithanApps/naval-arena-releases/releases).
 2. Descomprímelo en una carpeta tuya (Escritorio, Documentos…). **No** en *Archivos de programa*: el juego necesita poder escribir ahí para actualizarse.
 3. Abre **`Naval Arena.exe`**. Deja todos los archivos juntos: las dos DLL que van a su lado son las de Steam.
 

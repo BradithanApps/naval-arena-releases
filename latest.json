@@ -1,10 +1,9 @@
 {
-  "version": "0.7.3",
-  "notes": "Las islas ya no se atraviesan. El Holandés Errante se sumerge de proa hasta las velas y, al emerger, golpea a los enemigos cercanos. Los barcos hundidos desaparecen del todo.",
+  "version": "0.7.4",
+  "notes": "Si un jugador se desconecta online, su barco se hunde y ya no reaparece ni sigue disparando. Las actualizaciones aparecen al minuto de publicarse.",
   "windows": {
-    "file": "windows/NavalArena-0.7.3-windows.zip",
-    "url": "https://raw.githubusercontent.com/BradithanApps/naval-arena-releases/main/windows/NavalArena-0.7.3-windows.zip",
-    "size": 47901127,
-    "sha256": "4456ac0ba03ac6efadc6f3c822332c166ad7ab3bc509c1f70360d36a2866c726"
+    "url": "https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.7.4/NavalArena-0.7.4-windows.zip",
+    "size": 47901938,
+    "sha256": "835e35977c48b8e829d9fe73e51bf14e6e9fe250f1aa0c9621e14155a964ab18"
   }
 }
