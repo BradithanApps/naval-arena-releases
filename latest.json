@@ -1,10 +1,10 @@
 {
-  "version": "0.7.2",
-  "notes": "Actualizaciones automáticas desde el título y mini HUD sobre los barcos (nombre, casco y habilidad).",
+  "version": "0.7.3",
+  "notes": "Las islas ya no se atraviesan. El Holandés Errante se sumerge de proa hasta las velas y, al emerger, golpea a los enemigos cercanos. Los barcos hundidos desaparecen del todo.",
   "windows": {
-    "file": "windows/NavalArena-0.7.2-windows.zip",
-    "url": "https://raw.githubusercontent.com/BradithanApps/naval-arena-releases/main/windows/NavalArena-0.7.2-windows.zip",
-    "size": 47896967,
-    "sha256": "037c36c468204a7c16a58d3b53d835d44dee6aa5e4a2519021c6943f5b2ae0e6"
+    "file": "windows/NavalArena-0.7.3-windows.zip",
+    "url": "https://raw.githubusercontent.com/BradithanApps/naval-arena-releases/main/windows/NavalArena-0.7.3-windows.zip",
+    "size": 47901127,
+    "sha256": "4456ac0ba03ac6efadc6f3c822332c166ad7ab3bc509c1f70360d36a2866c726"
   }
 }
