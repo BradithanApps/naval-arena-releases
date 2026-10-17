@@ -1,0 +1,10 @@
+{
+  "version": "0.7.2",
+  "notes": "Actualizaciones automáticas desde el título y mini HUD sobre los barcos (nombre, casco y habilidad).",
+  "windows": {
+    "file": "windows/NavalArena-0.7.2-windows.zip",
+    "url": "https://raw.githubusercontent.com/BradithanApps/naval-arena-releases/main/windows/NavalArena-0.7.2-windows.zip",
+    "size": 47896967,
+    "sha256": "037c36c468204a7c16a58d3b53d835d44dee6aa5e4a2519021c6943f5b2ae0e6"
+  }
+}
