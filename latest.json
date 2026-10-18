@@ -1,9 +1,9 @@
 {
-  "version": "0.7.4",
-  "notes": "Si un jugador se desconecta online, su barco se hunde y ya no reaparece ni sigue disparando. Las actualizaciones aparecen al minuto de publicarse.",
+  "version": "0.8.0",
+  "notes": "¡Nuevo Astillero! Personaliza tu barco y desbloquea piezas con medallas y logros. Bitácora renovada.",
   "windows": {
-    "url": "https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.7.4/NavalArena-0.7.4-windows.zip",
-    "size": 47901938,
-    "sha256": "835e35977c48b8e829d9fe73e51bf14e6e9fe250f1aa0c9621e14155a964ab18"
+    "url": "https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.8.0/NavalArena-0.8.0-win64.zip",
+    "size": 48440216,
+    "sha256": "2302a29ba412f768ec5f5c246252c9afec52a79a9809393fc8caf3f928290b75"
   }
 }
