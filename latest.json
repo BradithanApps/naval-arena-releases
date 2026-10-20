@@ -1,9 +1,9 @@
 {
-  "version": "0.8.0",
-  "notes": "¡Nuevo Astillero! Personaliza tu barco y desbloquea piezas con medallas y logros. Bitácora renovada.",
+  "version": "0.8.1",
+  "notes": "Estelas y efectos de combate nuevos, rebotes con astillas, controles configurables y arreglos del juego online.",
   "windows": {
-    "url": "https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.8.0/NavalArena-0.8.0-win64.zip",
-    "size": 48440663,
-    "sha256": "7130c234fe469d538f3fdde97d9276ea0a3d145281c4492f6bbf857f2dafae21"
+    "url": "https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.8.1/NavalArena-0.8.1-win64.zip",
+    "size": 48478290,
+    "sha256": "d7bfebf55cae27d7525f8fe3f3d2a08ff723a90a31e4654aa585ffee8d98b6b0"
   }
 }
