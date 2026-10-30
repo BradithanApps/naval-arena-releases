@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071a31">
+  <meta name="description" content="Naval Arena: un roguelite cooperativo de barcos, cañones y oleadas que emergen del abismo. Descarga gratis la última versión para Windows.">
+  <title>Naval Arena — Húndelos antes del amanecer</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --sea: #071a31;
+      --deep: #04111f;
+      --panel: rgba(12, 36, 59, .82);
+      --line: rgba(151, 199, 219, .16);
+      --foam: #e8f4ed;
+      --muted: #a9c2c8;
+      --gold: #f4c45e;
+      --gold-dark: #d99a35;
+      --teal: #72d7ca;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--foam);
+      background: var(--deep);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    .page-shell { overflow: hidden; background: radial-gradient(ellipse at 50% 0%, #103454 0, var(--sea) 46rem, var(--deep) 100%); }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .topbar { height: 78px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(198, 225, 223, .1); }
+    .brand { display: inline-flex; gap: 11px; align-items: center; text-decoration: none; font-weight: 850; letter-spacing: .11em; font-size: .92rem; }
+    .brand-mark { display: grid; width: 37px; height: 37px; place-items: center; border: 1px solid rgba(244,196,94,.6); border-radius: 12px; color: var(--gold); background: rgba(244,196,94,.08); font-size: 1.18rem; }
+    .nav-links { display: flex; gap: 27px; align-items: center; color: var(--muted); font-size: .9rem; }
+    .nav-links a { text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--foam); }
+    .nav-download { border: 1px solid rgba(244,196,94,.45); border-radius: 999px; padding: 8px 15px; color: var(--gold) !important; }
+    .hero { position: relative; display: grid; grid-template-columns: .92fr 1.08fr; gap: 48px; align-items: center; min-height: 620px; padding-block: 60px 72px; }
+    .hero::before { content: ""; position: absolute; width: 520px; height: 520px; top: 7%; left: 22%; border-radius: 50%; background: rgba(44, 136, 174, .13); filter: blur(85px); pointer-events: none; }
+    .hero-copy, .hero-art { position: relative; z-index: 1; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--teal); font-size: .77rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 22px; height: 1px; background: currentColor; }
+    h1 { max-width: 590px; margin: 18px 0 17px; font-size: clamp(3.5rem, 7.8vw, 6.1rem); line-height: .92; letter-spacing: -.075em; }
+    h1 span { display: block; color: var(--gold); }
+    .intro { max-width: 490px; color: #bfd1d4; font-size: 1.09rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; align-items: center; margin-top: 30px; }
+    .button { min-height: 52px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 22px; border: 1px solid transparent; border-radius: 12px; text-decoration: none; font-weight: 850; transition: transform .18s, box-shadow .18s, background .18s; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: #2e210b; background: linear-gradient(180deg, #ffdc80, var(--gold)); box-shadow: 0 9px 30px rgba(244,196,94,.22), inset 0 1px rgba(255,255,255,.6); }
+    .button-primary:hover { box-shadow: 0 12px 34px rgba(244,196,94,.34), inset 0 1px rgba(255,255,255,.6); }
+    .button-secondary { border-color: var(--line); color: var(--foam); background: rgba(255,255,255,.035); }
+    .button .arrow { font-size: 1.15rem; }
+    .download-meta { margin: 12px 0 0; color: #8daab4; font-size: .8rem; }
+    .download-meta strong { color: #cfe0dd; font-weight: 700; }
+    .hero-art { transform: rotate(1.5deg); }
+    .art-frame { position: relative; overflow: hidden; border: 1px solid rgba(174,224,222,.28); border-radius: 21px; background: #123a55; box-shadow: 0 35px 90px rgba(0,0,0,.43), 0 0 0 8px rgba(149,207,209,.035); }
+    .art-frame img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+    .art-frame::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, rgba(4,17,31,.77)); }
+    .art-caption { position: absolute; z-index: 1; right: 20px; bottom: 16px; left: 20px; display: flex; justify-content: space-between; align-items: end; font-size: .76rem; color: #d8e8e3; }
+    .art-caption strong { font-size: .94rem; }
+    .version-stamp { position: absolute; top: -20px; right: -7px; z-index: 2; padding: 12px 15px; transform: rotate(5deg); border: 1px solid rgba(244,196,94,.5); border-radius: 12px; color: #ffe09a; background: #152f46; box-shadow: 0 12px 30px rgba(0,0,0,.25); font-size: .75rem; font-weight: 800; letter-spacing: .04em; }
+    .version-stamp span { display: block; color: #a8c2c7; font-size: .63rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+    .quick-facts { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 27px; color: #a8c4c9; font-size: .79rem; }
+    .quick-facts span { display: inline-flex; align-items: center; gap: 7px; }
+    .quick-facts b { color: var(--gold); font-size: 1rem; }
+    .section { padding-block: 75px; }
+    .section-heading { max-width: 600px; margin-bottom: 30px; }
+    .section-heading h2 { margin: 9px 0 8px; font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.05; letter-spacing: -.055em; }
+    .section-heading p { margin: 0; color: var(--muted); }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .feature-card { min-height: 200px; padding: 23px; border: 1px solid var(--line); border-radius: 16px; background: linear-gradient(145deg, rgba(25,62,86,.75), rgba(9,29,48,.78)); }
+    .feature-icon { display: grid; width: 42px; height: 42px; margin-bottom: 20px; place-items: center; border: 1px solid rgba(114,215,202,.24); border-radius: 12px; color: var(--teal); background: rgba(114,215,202,.08); font-size: 1.25rem; }
+    .feature-card h3 { margin: 0 0 5px; font-size: 1.03rem; }
+    .feature-card p { margin: 0; color: #a7bec5; font-size: .88rem; }
+    .screenshots { padding-top: 35px; }
+    .shot-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 14px; }
+    .shot { position: relative; overflow: hidden; min-height: 230px; border: 1px solid var(--line); border-radius: 16px; background: #15374d; }
+    .shot img { display: block; width: 100%; height: 100%; min-height: inherit; object-fit: cover; transition: transform .4s; }
+    .shot:hover img { transform: scale(1.025); }
+    .shot-label { position: absolute; right: 0; bottom: 0; left: 0; padding: 34px 18px 15px; color: white; font-weight: 750; background: linear-gradient(transparent, rgba(3,15,26,.82)); }
+    .shot-grid .shot:last-child { grid-column: 1 / -1; min-height: 310px; }
+    .shot-grid .shot:last-child img { max-height: 390px; object-position: center 56%; }
+    .download-panel { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; overflow: hidden; padding: 34px; border: 1px solid rgba(244,196,94,.27); border-radius: 20px; background: radial-gradient(ellipse at 100% 0%, rgba(215,161,67,.15), transparent 50%), linear-gradient(135deg, #15334b, #0b2035); }
+    .download-panel h2 { margin: 8px 0 5px; font-size: clamp(1.7rem, 3.5vw, 2.5rem); line-height: 1.05; letter-spacing: -.05em; }
+    .download-panel p { margin: 0; color: var(--muted); }
+    .install-note { margin-top: 19px !important; font-size: .82rem; }
+    footer { display: flex; justify-content: space-between; gap: 15px; padding-block: 25px 35px; border-top: 1px solid rgba(198,225,223,.1); color: #78939e; font-size: .78rem; }
+    footer a { text-decoration: none; }
+    footer a:hover { color: var(--foam); }
+    @media (max-width: 790px) {
+      .hero { grid-template-columns: 1fr; gap: 48px; min-height: 0; padding-block: 65px; }
+      .hero-copy { max-width: 620px; }
+      .hero-art { width: min(100%, 680px); margin-inline: auto; }
+      .feature-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      .topbar { height: 66px; }
+      .nav-links { gap: 12px; font-size: .78rem; }
+      .nav-links a:not(.nav-download) { display: none; }
+      .nav-download { padding: 7px 12px; }
+      .hero { padding-block: 52px 58px; }
+      h1 { font-size: clamp(3.3rem, 18vw, 5rem); }
+      .intro { font-size: 1rem; }
+      .hero-actions { align-items: stretch; }
+      .hero-actions .button { flex: 1 1 100%; }
+      .version-stamp { top: -16px; right: 0; }
+      .quick-facts { gap: 8px 14px; }
+      .section { padding-block: 54px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .feature-card { min-height: 0; }
+      .shot-grid { grid-template-columns: 1fr; }
+      .shot, .shot-grid .shot:last-child { grid-column: auto; min-height: 205px; }
+      .shot-grid .shot:last-child img { min-height: 205px; }
+      .download-panel { grid-template-columns: 1fr; padding: 25px 21px; }
+      .download-panel .button { width: 100%; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="wrap topbar">
+      <a class="brand" href="#inicio" aria-label="Naval Arena, inicio"><span class="brand-mark" aria-hidden="true">⚓</span> NAVAL ARENA</a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#juego">El juego</a>
+        <a href="#capturas">Capturas</a>
+        <a class="nav-download" href="#descargar">Descarga gratis ↓</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="wrap hero" id="inicio">
+        <div class="hero-copy">
+          <div class="eyebrow">Aventura cooperativa · Alfa</div>
+          <h1>El mar no da <span>cuartel.</span></h1>
+          <p class="intro">Capitanea tu barco, reúne a tu tripulación y resiste las oleadas que emergen del abismo. Cada ronda te acerca al tesoro… o al naufragio.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" id="download-button" href="https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.9.0/NavalArena-0.9.0-win64.zip" download>
+              <span aria-hidden="true">↓</span> Descargar para Windows <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="button button-secondary" href="#juego">Conoce el juego</a>
+          </div>
+          <p class="download-meta" id="download-meta"><strong>Versión 0.9.0</strong> · Gratis · Windows · ZIP de 46 MB</p>
+          <div class="quick-facts" aria-label="Características">
+            <span><b>✦</b> Hasta 4 jugadores</span><span><b>✦</b> Cooperativo online</span><span><b>✦</b> Runs diferentes</span>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="version-stamp"><span>Última versión</span><strong id="version-stamp">0.9.0</strong></div>
+          <div class="art-frame">
+            <img src="images/combate.jpg" alt="Barcos luchando juntos contra enemigos en Naval Arena" fetchpriority="high">
+            <div class="art-caption"><strong>Tu tripulación. Tu última oportunidad.</strong><span>01 / En combate</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap section" id="juego">
+        <div class="section-heading">
+          <div class="eyebrow">Una tripulación contra el abismo</div>
+          <h2>Una ronda más. Una mejora más.</h2>
+          <p>Un roguelite de arena en alta mar. Elige cómo equiparte, aguanta las oleadas y vuelve al puerto más fuerte.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="feature-icon" aria-hidden="true">⚔</div><h3>Sobrevive a las oleadas</h3><p>Enemigos emergen del fondo. Maniobra, dispara y usa la habilidad de tu barco para no acabar bajo el agua.</p></article>
+          <article class="feature-card"><div class="feature-icon" aria-hidden="true">⚓</div><h3>Prepara tu barco</h3><p>Entre rondas, compra cañones, velas, blindaje y objetos. Cada elección cambia tu próxima salida.</p></article>
+          <article class="feature-card"><div class="feature-icon" aria-hidden="true">✦</div><h3>Navega en compañía</h3><p>Juega en solitario o forma una tripulación de hasta cuatro. Invita por Steam o conecta por IP.</p></article>
+        </div>
+      </section>
+
+      <section class="wrap section screenshots" id="capturas">
+        <div class="section-heading">
+          <div class="eyebrow">Vistas desde cubierta</div>
+          <h2>Así se ve la aventura.</h2>
+        </div>
+        <div class="shot-grid">
+          <figure class="shot"><img src="images/puerto.jpg" alt="El puerto donde tu tripulación prepara la partida" loading="lazy"><figcaption class="shot-label">Reúne a tu tripulación en el puerto</figcaption></figure>
+          <figure class="shot"><img src="images/puerto_mejoras.jpg" alt="Pantalla de mejoras con armas y objetos" loading="lazy"><figcaption class="shot-label">Equípate antes de zarpar</figcaption></figure>
+          <figure class="shot"><img src="images/combate.jpg" alt="Combate cooperativo entre barcos" loading="lazy"><figcaption class="shot-label">Resiste, coopera y sobrevive a cada oleada</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="wrap section" id="descargar">
+        <div class="download-panel">
+          <div>
+            <div class="eyebrow">La aventura te espera</div>
+            <h2>¿Listo para zarpar?</h2>
+            <p>Descarga la última versión para Windows y reúne a tu tripulación.</p>
+            <p class="install-note">Descomprime el ZIP en una carpeta y abre <strong>Naval Arena.exe</strong>. Para jugar online con amigos, todos deben tener la misma versión.</p>
+          </div>
+          <a class="button button-primary" id="download-button-bottom" href="https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.9.0/NavalArena-0.9.0-win64.zip" download>Descargar gratis <span class="arrow" aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrap">
+      <span>© Naval Arena · Un juego en desarrollo independiente.</span>
+      <a href="https://github.com/BradithanApps/naval-arena-releases/releases" target="_blank" rel="noopener noreferrer">Ver versiones anteriores ↗</a>
+    </footer>
+  </div>
+  <script>
+    (() => {
+      const fallback = {
+        version: "0.9.0",
+        notes: "Dos armas nuevas, siete objetos nuevos, armas rediseñadas, iconos nuevos, tutorial y sala online persistente.",
+        windows: {
+          url: "https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.9.0/NavalArena-0.9.0-win64.zip",
+          size: 48721189
+        }
+      };
+      const formatSize = bytes => `${Math.round(bytes / (1024 * 1024))} MB`;
+      const updatePage = data => {
+        if (!data || !data.windows || !data.windows.url) return;
+        const version = String(data.version || fallback.version);
+        const size = Number(data.windows.size) || fallback.windows.size;
+        document.querySelectorAll("#download-button, #download-button-bottom").forEach(button => {
+          button.href = data.windows.url;
+        });
+        document.getElementById("version-stamp").textContent = version;
+        document.getElementById("download-meta").innerHTML = `<strong>Versión ${version}</strong> · Gratis · Windows · ZIP de ${formatSize(size)}`;
+        if (data.notes) {
+          const detail = document.querySelector(".download-panel > div > p");
+          detail.textContent = `Versión ${version}: ${data.notes}`;
+        }
+      };
+      fetch(`latest.json?updated=${Date.now()}`, { cache: "no-store" })
+        .then(response => { if (!response.ok) throw new Error("No se pudo consultar la última versión"); return response.json(); })
+        .then(updatePage)
+        .catch(() => updatePage(fallback));
+    })();
+  </script>
+</body>
+</html>
