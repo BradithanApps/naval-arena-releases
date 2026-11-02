@@ -1,9 +1,9 @@
 {
-  "version": "0.9.0",
-  "notes": "Dos armas nuevas, siete objetos nuevos, armas rediseñadas, iconos nuevos, tutorial y sala online persistente.",
+  "version": "0.9.1",
+  "notes": "Partidas online mucho más fluidas, límite de barcos enemigos y Modo prueba para empezar en cualquier oleada.",
   "windows": {
-    "url": "https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.9.0/NavalArena-0.9.0-win64.zip",
-    "size": 48721189,
-    "sha256": "0b2860652b27fe688b127b4065f29368351a35d971abdbc84e85e4007ee49719"
+    "url": "https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.9.1/NavalArena-0.9.1-win64.zip",
+    "size": 48731224,
+    "sha256": "683abfa43daf793ab0485702ebb52d0e6434c9336944f66ae424703d03ac623e"
   }
 }
