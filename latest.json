@@ -1,9 +1,9 @@
 {
-  "version": "0.9.3",
-  "notes": "Distancia de cámara ajustable, ping con el anfitrión y lista de quién sigue en el puerto.",
+  "version": "0.9.4",
+  "notes": "Menos tirones con muchos barcos, tienda y selección de barco que ya no se mueven, y arreglos online.",
   "windows": {
-    "url": "https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.9.3/NavalArena-0.9.3-win64.zip",
-    "size": 48731785,
-    "sha256": "79f8b716c8283b556d726c690e2cf32dcaa1afa5e0bcfaab1610940c6af69dde"
+    "url": "https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.9.4/NavalArena-0.9.4-win64.zip",
+    "size": 48733518,
+    "sha256": "b8cc528044736e349f727839a5eef7e42a96ae2517499f07ec375fdbc10ec7c7"
   }
 }
