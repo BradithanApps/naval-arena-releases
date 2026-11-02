@@ -1,9 +1,9 @@
 {
-  "version": "0.9.1",
-  "notes": "Partidas online mucho más fluidas, límite de barcos enemigos y Modo prueba para empezar en cualquier oleada.",
+  "version": "0.9.3",
+  "notes": "Distancia de cámara ajustable, ping con el anfitrión y lista de quién sigue en el puerto.",
   "windows": {
-    "url": "https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.9.1/NavalArena-0.9.1-win64.zip",
-    "size": 48731224,
-    "sha256": "683abfa43daf793ab0485702ebb52d0e6434c9336944f66ae424703d03ac623e"
+    "url": "https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.9.3/NavalArena-0.9.3-win64.zip",
+    "size": 48731785,
+    "sha256": "79f8b716c8283b556d726c690e2cf32dcaa1afa5e0bcfaab1610940c6af69dde"
   }
 }
