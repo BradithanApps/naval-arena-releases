@@ -1,9 +1,9 @@
 {
-  "version": "0.12.1",
-  "notes": "Emotes para hablar con tu tripulación, 20 banderas de Latinoamérica y velas que ondean con el viento.",
+  "version": "0.12.2",
+  "notes": "Arreglo: Windows ya no bloquea el juego al abrirlo (Smart App Control).",
   "windows": {
-    "url": "https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.12.1/NavalArena-0.12.1-win64.zip",
-    "size": 48831058,
-    "sha256": "82ce8df475c88a71326e3514902a8c714274e1658fd0396e62489fe26fe2ec5d"
+    "url": "https://github.com/BradithanApps/naval-arena-releases/releases/download/v0.12.2/NavalArena-0.12.2-win64.zip",
+    "size": 48832943,
+    "sha256": "1c679486f639146ac499dad15eb7daf313af3d05aaa9c250b63e38215fd56fe0"
   }
 }
